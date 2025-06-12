@@ -15,11 +15,8 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody UserEntity user) {
-        if (userRepository.findByUsername(user.getUsername()) != null) {
-            return ResponseEntity.badRequest().body("Usuário já existe");
-        }
-        if (userRepository.findByEmail(user.getEmail()) != null) {
-            return ResponseEntity.badRequest().body("Email já cadastrado");
+        if (userRepository.findByCelular(user.getCelular()) != null) {
+            return ResponseEntity.badRequest().body("Celular já cadastrado");
         }
         userRepository.save(user);
         return ResponseEntity.ok("Usuário cadastrado com sucesso");
@@ -27,10 +24,10 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> loginUser(@RequestBody UserEntity user) {
-        UserEntity existingUser = userRepository.findByUsername(user.getUsername());
-        if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
+        UserEntity existingUser = userRepository.findByCelular(user.getCelular());
+        if (existingUser != null && existingUser.getSenha().equals(user.getSenha())) {
             return ResponseEntity.ok("Login bem-sucedido");
         }
-        return ResponseEntity.status(401).body("Usuário ou senha inválidos");
+        return ResponseEntity.status(401).body("Celular ou senha inválidos");
     }
 }

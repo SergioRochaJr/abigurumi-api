@@ -1,26 +1,31 @@
 package com.abigurumi.abigurumiapi.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Id; // Substituí @GeneratedValue por @Id para usar celular como chave
+import jakarta.persistence.Column;
 
 @Entity
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
-    private String password;
-    private String email;
+    @Column(unique = true, nullable = false)
+    private String celular;
+    private String nome;
+    private String dataNascimento;
+    private String senha;
+    private String preferencia;
+    private int valorProduto;
 
     // Getters, setters e construtores
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getCelular() { return celular; }
+    public void setCelular(String celular) { this.celular = celular; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public String getDataNascimento() { return dataNascimento; }
+    public void setDataNascimento(String dataNascimento) { this.dataNascimento = dataNascimento; }
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
+    public String getPreferencia() { return preferencia; }
+    public void setPreferencia(String preferencia) { this.preferencia = preferencia; }
+    public int getValorProduto() { return valorProduto; }
+    public void setValorProduto(int valorProduto) { this.valorProduto = valorProduto; }
 }
