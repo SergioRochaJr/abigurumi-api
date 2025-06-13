@@ -1,7 +1,7 @@
 package com.abigurumi.abigurumiapi.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id; // Substituí @GeneratedValue por @Id para usar celular como chave
+import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
 @Entity
