@@ -22,14 +22,14 @@ public class UserController {
         return ResponseEntity.ok("Usuário cadastrado com sucesso");
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody UserEntity user) {
-        UserEntity existingUser = userRepository.findByCelular(user.getCelular());
-        if (existingUser != null && existingUser.getSenha().equals(user.getSenha())) {
-            return ResponseEntity.ok(new LoginResponse("Login bem-sucedido", existingUser.getNome()));
-        }
-        return ResponseEntity.status(401).body("Celular ou senha inválidos");
+@PostMapping("/login")
+public ResponseEntity<?> loginUser(@RequestBody UserEntity user) {
+    UserEntity existingUser = userRepository.findByCelular(user.getCelular());
+    if (existingUser != null && existingUser.getSenha().equals(user.getSenha())) {
+        return ResponseEntity.ok(new LoginResponse("Login bem-sucedido", existingUser.getNome()));
     }
+    return ResponseEntity.status(401).body("Celular ou senha inválidos");
+}
 }
 class LoginResponse {
     private String message;
