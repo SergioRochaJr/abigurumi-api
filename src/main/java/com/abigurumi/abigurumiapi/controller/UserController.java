@@ -9,7 +9,6 @@ import com.abigurumi.abigurumiapi.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
