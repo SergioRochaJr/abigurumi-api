@@ -1,4 +1,4 @@
-package com.abigurumi.abigurumiapi.controller;
+/*package com.abigurumi.abigurumiapi.controller;
 
    import com.abigurumi.abigurumiapi.entity.AbigurumiEntity;
    import com.abigurumi.abigurumiapi.service.AbigurumiService;
@@ -37,4 +37,4 @@ package com.abigurumi.abigurumiapi.controller;
        public void delete(@PathVariable Long id) {
            service.delete(id);
        }
-   }
+   }*/

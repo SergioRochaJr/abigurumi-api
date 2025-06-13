@@ -1,4 +1,4 @@
-package com.abigurumi.abigurumiapi.service;
+/*package com.abigurumi.abigurumiapi.service;
 
    import com.abigurumi.abigurumiapi.entity.AbigurumiEntity;
    import com.abigurumi.abigurumiapi.repository.AbigurumiRepository;
@@ -34,4 +34,4 @@ package com.abigurumi.abigurumiapi.service;
        public void delete(Long id) {
            repository.deleteById(id);
        }
-   }
+   }*/
